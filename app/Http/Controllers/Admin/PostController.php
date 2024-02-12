@@ -25,6 +25,7 @@ class PostController extends Controller
     public function create()
     {
         //
+        return view('admin.posts.create');
     }
 
     /**
@@ -33,14 +34,24 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request->all());
+        $data = $request->validate($this->rules);
+
+
+        $post = Post::create($data);
+
+        return redirect()->route('admin.posts.show', $post);
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Post $post)
     {
         //
+        return view('admin.posts.show', compact('post'));
+
     }
 
     /**
