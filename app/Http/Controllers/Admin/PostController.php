@@ -35,7 +35,7 @@ class PostController extends Controller
     {
         //
         // dd($request->all());
-        $data = $request->validate($this->rules);
+        $data = $request->all();
 
 
         $post = Post::create($data);
