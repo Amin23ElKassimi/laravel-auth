@@ -9,7 +9,9 @@
             @include('partials.errors')
 
             <form action="{{ route('admin.posts.update', $post)}}" method="POST">
-                @csrf
+                {{-- CSFR serve per prendere e validare il token --}}
+                @csrf  
+                {{-- Methodo da mettere quando si usa il metodo update --}}
                 @method('PUT')
 
                 <div class="mb-3 input-group">

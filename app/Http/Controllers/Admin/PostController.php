@@ -36,8 +36,6 @@ class PostController extends Controller
         //
         // dd($request->all());
         $data = $request->all();
-
-
         $post = Post::create($data);
 
         return redirect()->route('admin.posts.show', $post);
@@ -57,24 +55,34 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post)
     {
         //
+        return view('admin.posts.edit', compact('post'));
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Post $post)
     {
         //
+        $data = $request->all();
+        $post->update($data);
+
+        return redirect()->route('admin.posts.show', $post);
+        
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy( Post $post)
     {
         //
+        $post->delete();
+        return redirect()->route('admin.posts.index');
+
     }
 }
