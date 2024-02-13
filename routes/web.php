@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController  as AdminDashboardController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,10 @@ Route::middleware('auth')
     ->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
         Route::resource('/posts', AdminPostController::class);
-});
+        Route::get('/dashboard', [AdminProjectController::class, 'index'])->name('admin.dashboard');
+        Route::resource('/projects', AdminProjectController::class);
+    });
+
+
 
 
