@@ -12,7 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->id();
+            $table->id();   
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('status')->default('pending');
+            $table->text('view');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->unsignedBigInteger('client_id')->nullable();
+            $table->decimal('budget', 10, 2)->nullable();
+            $table->enum('priority', ['low', 'medium', 'high'])->default('medium');
             $table->timestamps();
         });
     }
