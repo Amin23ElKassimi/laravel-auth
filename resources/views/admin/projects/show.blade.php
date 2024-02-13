@@ -48,14 +48,14 @@
                         </div>
 
                         {{-- Delete --}}
-                        {{-- <form class="d-inline-block pasta-eraser"  action="{{ route('guest.projects.destroy', $project) }}" method="POST" data-pasta-name="{{ $pasta['titolo'] }}">
+                        <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button class="btn btn-sm btn-warning" >
-                                elimina
+                            <button class="btn btn-sm btn-warning" type="submit">
+                                Delete
                             </button>
-                        </form> --}}
+                        </form>
 
                     </div>
                 </div>

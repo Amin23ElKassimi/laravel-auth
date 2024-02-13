@@ -74,8 +74,8 @@
                                             Edit
                                         </button>
                                     </a>
-                                    {{-- Bottone Di Delete --}}
-                                    <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project) }}" method="projects">
+                                    {{-- Delete --}}
+                                    <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
 
