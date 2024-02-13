@@ -22,6 +22,13 @@
                             <th scope="col">budget</th>
                             <th scope="col">priority</th>
                             <th scope="col">description</th>
+                            <th scope="col">
+                                <a href="{{ route('admin.projects.create',) }}">
+                                    <button class="btn btn-secondary btn-lg">
+                                        Add New Project
+                                    </button>
+                                </a>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
