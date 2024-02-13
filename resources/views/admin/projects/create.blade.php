@@ -16,21 +16,23 @@
                     <input class="form-control" type="text" name="name" id="name" value="{{ old('name') }}">
                 </div>
 
+
                 <div class="mb-3 input-group">
                     <label for="author" class="input-group-text">Status:</label>
-                    {{-- <input class="form-control" type="text" name="author" id="author" value="{{ old('author') }}"> --}}
                     <select class="form-select" aria-label="Default select example" name="author" id="author" value="{{ old('author') }}" >
                         <option selected>Select Priority</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
+                        <option value="off">Off</option>
+                        <option value="blocked">Blocked</option>
+                        <option value="hold">Hold</option>
+                        <option value="ready">Ready</option>
+                        <option value="done">Done</option>
                     </select>
                 </div>
-                <script>
-                    function newFunction(newVal){    
-                        window.location.href = '/retrieve_money/'+newVal+'/account';
-                    }
-                </script>
+
+                <div class="mb-3 input-group">
+                    <label for="budget" class="input-group-text">Budget:</label>
+                    <input class="form-control" type="number" name="budget" id="budget" value="{{ old('budget') }}">
+                </div>
 
                 <div class="mb-3 input-group">
                     <label for="start_date" class="input-group-text">Start Date:</label>
@@ -43,8 +45,8 @@
                 </div>
 
                 <div class="mb-3 input-group">
-                    <label for="post_image" class="input-group-text">Post image url:</label>
-                    <input class="form-control" type="text" name="post_image" id="post_image" value="{{ old('post_image') }}">
+                    <label for="view" class="input-group-text">Post image url:</label>
+                    <input class="form-control" type="text" name="view" id="view" value="{{ old('view') }}">
                 </div>
 
                 <div class="mb-3 input-group">

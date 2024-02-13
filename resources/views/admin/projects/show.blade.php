@@ -25,7 +25,7 @@
                             end_date: {{ $project->end_date }}
                         </p>
                         <p>
-                            Budget: {{ $project->budget }}
+                            Budget: {{ $project->budget }} &euro;
                         </p>
                         <div class="card-image">
                             <img class="w-50" src="{{  $project->view }}" alt="{{ $project->name }} ">
